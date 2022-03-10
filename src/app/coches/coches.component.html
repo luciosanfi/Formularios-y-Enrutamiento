@@ -1,0 +1,32 @@
+<h1>Coches</h1>
+<p>
+    Vamos a realizar una practica de formularios a traves de un formulario sobre coches.
+</p>
+<form #formCoche="ngForm" (ngSubmit)="onSubmit()">
+    <p>
+        <label>Nombre:</label>
+        <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="coche.nombre" required
+        maxlength="8" minlength="5" pattern="[0-4]+">
+        <span *ngIf="nombre.touched && !nombre.valid">
+            El nombre ingresado no es valido y debe ingresar un nombre valido.
+            
+        </span>
+    </p>
+    <p>
+        <label>Caballaje:</label>
+        <input type="text" name="caballaje" #caballaje="ngModel" [(ngModel)] ="coche.caballaje" required>
+    </p>
+    <p>
+        <label>Color:</label>
+        <input type="text" name="color" #color="ngModel" [(ngModel)]="coche.color" required>
+    </p>
+    <input type="submit" value="guardar">
+</form>
+<div>
+    <h3>Listado de coches</h3>
+    <ul>
+        <li *ngFor=" let coche of coches">
+            {{coche.nombre}} - {{coche.caballaje}} - {{coche.color}}
+        </li>
+    </ul>
+</div>
