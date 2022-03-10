@@ -15,7 +15,7 @@ export class CochesComponent implements OnInit {
     this.coches = [new Coche("Reanult","500","rojo")];
   }
   onSubmit(){
-    console.log(this.coche);
+    this.coches.push(this.coche);
 }
 
   ngOnInit(): void {

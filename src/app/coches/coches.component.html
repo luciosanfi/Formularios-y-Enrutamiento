@@ -6,7 +6,7 @@
     <p>
         <label>Nombre:</label>
         <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="coche.nombre" required
-        maxlength="8" minlength="5" pattern="[0-4]+">
+        maxlength="8" minlength="5" pattern="[A-Za-z]+">
         <span *ngIf="nombre.touched && !nombre.valid">
             El nombre ingresado no es valido y debe ingresar un nombre valido.
             
@@ -14,13 +14,14 @@
     </p>
     <p>
         <label>Caballaje:</label>
-        <input type="text" name="caballaje" #caballaje="ngModel" [(ngModel)] ="coche.caballaje" required>
+        <input type="text" name="caballaje" #caballaje="ngModel" [(ngModel)] ="coche.caballaje" 
+        required pattern="[0-9]+" minlength="2" maxlength="5">
     </p>
     <p>
         <label>Color:</label>
         <input type="text" name="color" #color="ngModel" [(ngModel)]="coche.color" required>
     </p>
-    <input type="submit" value="guardar">
+    <input type="submit" value="guardar"[disabled]="!formCoche.form.valid">
 </form>
 <div>
     <h3>Listado de coches</h3>
