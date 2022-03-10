@@ -16,6 +16,7 @@ export class CochesComponent implements OnInit {
   }
   onSubmit(){
     this.coches.push(this.coche);
+    this.coche = new Coche("","","")
 }
 
   ngOnInit(): void {

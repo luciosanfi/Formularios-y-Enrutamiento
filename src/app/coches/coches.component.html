@@ -2,7 +2,7 @@
 <p>
     Vamos a realizar una practica de formularios a traves de un formulario sobre coches.
 </p>
-<form #formCoche="ngForm" (ngSubmit)="onSubmit()">
+<form #formCoche="ngForm" (ngSubmit)="onSubmit(); formCoche.form.reset;">
     <p>
         <label>Nombre:</label>
         <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="coche.nombre" required
